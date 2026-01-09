@@ -1,3 +1,5 @@
+html { outline: 8px solid hotpink !important; }
+
 /* ChatGPT UI/UX Improvements - 8pt Grid System */
 @tailwind base;
 @tailwind components;
