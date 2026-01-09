@@ -1,0 +1,8 @@
+{
+  "name": "Copy of AutoPost Pro Cloud Edition",
+  "description": "A high-end, cloud-native automated content distribution platform for YouTube, Instagram, and Facebook, integrated with Supabase and Vercel.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

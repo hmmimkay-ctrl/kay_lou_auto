@@ -1,0 +1,15 @@
+
+name: Trigger AutoPost Cron
+on:
+  schedule:
+    - cron: '0 0 * * *' # Daily at midnight
+  workflow_dispatch: # Allow manual trigger from GitHub UI
+
+jobs:
+  ping-cron:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hit Vercel Cron Endpoint
+        run: |
+          curl -X POST "https://${{ secrets.VERCEL_PROJECT_URL }}/api/cron" \
+          -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}"

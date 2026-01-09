@@ -1,0 +1,32 @@
+
+// This file describes the backend logic required in /pages/api/
+
+// --- /api/cron.ts ---
+// Logic:
+// 1. Authenticate using Bearer token (CRON_SECRET)
+// 2. Fetch all active sheet_mappings
+// 3. For each sheet, pull data from Google Sheets API
+// 4. Upsert data into 'content_items' table
+// 5. Trigger a check of 'schedules' vs current time
+// 6. Queue approved items for upload
+
+// --- /api/upload/youtube.ts ---
+// Logic:
+// 1. Receive item_id
+// 2. Fetch media_url (video) from Supabase Storage or URL
+// 3. Authenticate with YouTube refresh_token
+// 4. POST to https://www.googleapis.com/upload/youtube/v3/videos
+// 5. Update platform_posts with external_id
+
+// --- /api/upload/meta.ts ---
+// Logic:
+// 1. Receive item_id
+// 2. Start Meta Container Upload (IG Business API)
+// 3. Poll for status
+// 4. Finalize publish
+// 5. Update platform_posts
+
+// --- /api/logs.ts ---
+// Logic:
+// 1. Simple Supabase fetch from 'run_logs' table
+// 2. Supports ?level=error or ?run_id=... filters
