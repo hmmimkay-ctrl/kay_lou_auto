@@ -254,3 +254,92 @@ button.secondary:hover {
     padding-right: var(--spacing-md);
   }
 }
+
+
+/* Override existing Tailwind classes with ChatGPT improvements */
+
+/* Global page layout */
+body {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+
+/* Target main content area - increase padding */
+[class*="bg-white"][class*="p-"] {
+  padding: 24px !important;
+}
+
+/* Make h1 and h2 titles larger */
+h1 {
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  margin-bottom: 24px !important;
+}
+
+h2 {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  margin-bottom: 16px !important;
+}
+
+/* Increase spacing between sections */
+[class*="mt-"] {
+  margin-top: 32px !important;
+}
+
+/* Make text larger for better readability */
+p {
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+}
+
+/* Improve number display - make them more prominent */
+[class*="text-2xl"], [class*="text-3xl"] {
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  margin-bottom: 8px !important;
+}
+
+/* Add proper spacing to divs */
+div[class*="rounded"] {
+  padding: 16px !important;
+  margin-bottom: 16px !important;
+}
+
+/* Improve button styling */
+button[class*="bg-blue"] {
+  padding: 12px 16px !important;
+  font-weight: 600 !important;
+}
+
+/* Add subtle borders and shadows */
+[class*="border"] {
+  border-color: #e5e7eb !important;
+}
+
+/* Improve status styling with colors */
+.status-success, [class*="green"], .success {
+  color: #16a34a !important;
+  font-weight: 600 !important;
+}
+
+.status-error, [class*="red"], .error {
+  color: #dc2626 !important;
+  font-weight: 600 !important;
+}
+
+.status-warning, [class*="yellow"], [class*="amber"], .warning {
+  color: #f59e0b !important;
+  font-weight: 600 !important;
+}
+
+/* Remove excessive margins from nested elements */
+div div div {
+  margin: 0 !important;
+}
+
+/* Add consistent spacing between text and elements */
+span[class*="text-sm"] {
+  opacity: 0.7 !important;
+  font-size: 13px !important;
+}
