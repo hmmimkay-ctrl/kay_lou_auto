@@ -1,3 +1,4 @@
+/* ChatGPT UI/UX Improvements - 8pt Grid System */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,11 +15,242 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #f8fafc;
+  background-color: #ffffff;
+  color: #1f2937;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* 8-pt Grid System */
+:root {
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 40px;
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+  --color-error: #dc2626;
+  --color-neutral: #6b7280;
+  --color-bg-secondary: #f9fafb;
+}
+
+/* Typography Scale */
+body {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: var(--spacing-lg);
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  color: #1f2937;
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* KPI Numbers - LARGE & DOMINANT */
+.kpi-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1f2937;
+  line-height: 1.2;
+}
+
+.kpi-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1f2937;
+  margin-top: var(--spacing-xs);
+}
+
+.kpi-meta {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-neutral);
+  opacity: 0.7;
+  margin-top: var(--spacing-xs);
+}
+
+/* Layout - Main Container */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: var(--spacing-lg);
+  padding-right: var(--spacing-lg);
+}
+
+/* Navigation */
+nav {
+  border-bottom: 1px solid #e5e7eb;
+  padding: var(--spacing-md) var(--spacing-lg);
+}
+
+nav button {
+  padding: var(--spacing-sm) var(--spacing-md);
+  margin-right: var(--spacing-lg);
+  font-size: 14px;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6b7280;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+nav button.active {
+  color: #1f2937;
+  font-weight: 600;
+  border-bottom-color: #3b82f6;
+}
+
+/* Section Styling */
+.section {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
+}
+
+.section h2 {
+  margin-bottom: var(--spacing-md);
+}
+
+/* KPI Grid - 4 Columns */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.kpi-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: var(--spacing-md) var(--spacing-md);
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.kpi-card:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Status Indicators */
+.status-success {
+  color: var(--color-success);
+  font-weight: 600;
+}
+
+.status-error {
+  color: var(--color-error);
+  font-weight: 600;
+}
+
+.status-warning {
+  color: var(--color-warning);
+  font-weight: 600;
+}
+
+.status-neutral {
+  color: var(--color-neutral);
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--spacing-md);
+}
+
+table th {
+  padding: var(--spacing-md);
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+table td {
+  padding: var(--spacing-md);
+  font-size: 14px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+table tr:hover {
+  background: #f9fafb;
+}
+
+table tr.success {
+  background: rgba(22, 163, 74, 0.05);
+}
+
+table tr.error {
+  background: rgba(220, 38, 38, 0.05);
+}
+
+/* Button Styling */
+button {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: #3b82f6;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background-color: #2563eb;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button.secondary {
+  background-color: #e5e7eb;
+  color: #1f2937;
+}
+
+button.secondary:hover {
+  background-color: #d1d5db;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .kpi-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .container {
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+  }
 }
